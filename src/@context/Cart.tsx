@@ -42,7 +42,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   function getTotal() {
-    if (!items || items.length === 0) setTotal(0);
+    if (!items || items.length === 0) {
+      setTotal(0);
+      return;
+    }
 
     let subTotal = 0;
 
