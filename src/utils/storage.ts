@@ -27,19 +27,20 @@ export function addDBItem(item: ProductsType) {
       arr.push(...convert2Object);
     }
   } catch (error) {
-    console.log("err");
+    throw new Error("An error has occured.");
+  } finally {
+    if (arr.filter((it) => it.id === item.id).length > 0) return;
+
+    arr.push(item);
+    const convert2JSON = JSON.stringify(arr);
+    sto.setItem("cart", convert2JSON);
   }
-
-  if (arr.filter((it) => it.id === item.id).length > 0) return;
-
-  arr.push(item);
-  const convert2JSON = JSON.stringify(arr);
-  sto.setItem("cart", convert2JSON);
 }
 
 export function getDBItems() {
   const get = localStorage.getItem("cart");
-  if (get === null) return;
+
+  if (!Array.isArray(get)) return;
   const conversion = JSON.parse(get);
   return conversion;
 }
