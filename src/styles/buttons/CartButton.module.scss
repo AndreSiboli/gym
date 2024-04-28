@@ -1,0 +1,44 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  padding: 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #000;
+  transition: 0.25s ease-in-out;
+  position: relative;
+  width: 100%;
+
+  > span {
+    z-index: 5;
+    transition: 0.15s ease-in-out;
+    position: relative;
+  }
+
+  &::after {
+    content: "";
+    background: #ec5e76;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.25s ease-in-out;
+  }
+
+  @include mix.OnlyPc {
+    &:hover {
+      border-color: #ec5e76;
+      > span {
+        color: var.$pri_text-color;
+      }
+
+      &:after {
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}

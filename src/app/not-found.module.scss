@@ -1,0 +1,19 @@
+.notfound {
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+  }
+
+  &_err {
+    p {
+      font-size: calc(3em + 6vw);
+
+      svg {
+        font-size: 16px;
+      }
+    }
+  }
+}

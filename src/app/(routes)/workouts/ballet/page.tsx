@@ -1,0 +1,62 @@
+import styles from "./ballet.module.scss";
+
+import img from "@/assets/gym/ballet/pexels-budgeron-bach-5154374.jpg";
+import Wallpaper from "@/app/components/layout/Wallpaper";
+
+import ballet1 from "@/assets/gym/ballet/pexels-anastasia-shuraeva-8935911.jpg";
+import ballet2 from "@/assets/gym/ballet/pexels-cottonbro-studio-4324017.jpg";
+import ballet3 from "@/assets/gym/ballet/pexels-cottonbro-studio-10640450.jpg";
+import WorkoutImages from "@/app/components/layout/WorkoutImage";
+import Container from "@/app/components/layout/Container";
+import Schedule from "@/app/components/layout/workouts/Schedule";
+
+export default function Ballet() {
+  const datas = [
+    {
+      id: "1",
+      src: ballet1,
+      text: "Embrace Each Posture as a Journey, Each Breath as a Guide, and",
+      styleImg: { objectPosition: "50% 75%" },
+    },
+    {
+      id: "2",
+      src: ballet2,
+      text: "Embrace Each Posture as a Journey, Each Breath as a Guide, and an",
+      styleImg: { objectPosition: "50% 90%" },
+    },
+    {
+      id: "3",
+      src: ballet3,
+      text: "Embrace Each Posture as a Journey, Each Breath as a Guide, and a",
+      styleImg: { objectPosition: "50% 75%" },
+      reverse: true,
+    },
+  ];
+
+  return (
+    <div className={styles.ballet}>
+      <Wallpaper
+        src={img}
+        title="Ballet"
+        slogan="Dance with Resilience, Shine with Grace."
+        stylesImg={{ objectPosition: "50% 0%" }}
+      />
+
+      <section className={styles.about}>
+        <Container>
+          <div className={styles.about_container}>
+            <p>
+              From the Whisper of Pointe Shoes to the Soaring Heights of Grand
+              Jetés, Ballet Transcends Time, Captivating Hearts and Minds Alike.
+              Experience the Magic, Feel the Passion, and Let Ballet Transport
+              You to a World of Dreams.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <WorkoutImages datas={datas} />
+      <Schedule />
+    </div>
+  );
+}

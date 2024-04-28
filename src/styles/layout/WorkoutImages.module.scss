@@ -1,0 +1,38 @@
+@use "@/styles/_dirs/variables" as var;
+
+.description {
+  color: var.$pri_text_color;
+  background: var.$sec_color;
+
+  &_container {
+    display: flex;
+  }
+
+  &_card {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    .description_image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.3);
+    }
+
+    @media (max-width: 900px) {
+      &:first-child {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.plans {
+  min-height: 100dvh;
+  padding: 2em;
+  padding-top: 8.25em;
+  padding-bottom: 4em;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  &_description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    p {
+      text-align: center;
+    }
+  }
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 275px));
+    place-content: center;
+    gap: 1em;
+
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  &_advertising {
+    p {
+      text-align: center;
+      font-size: 0.8em;
+    }
+  }
+}

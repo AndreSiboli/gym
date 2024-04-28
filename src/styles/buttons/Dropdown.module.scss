@@ -1,0 +1,44 @@
+@use "@/styles/_dirs/variables" as var;
+
+.dropdown {
+  cursor: pointer;
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    font-size: 1.5em;
+    margin-bottom: 0.25em;
+
+    svg {
+      transition: 0.25s ease-in-out;
+    }
+  }
+
+  &_child {
+    height: 0;
+    overflow: hidden;
+    transition: 0.15s ease-in-out;
+  }
+
+  &_navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    padding: 1em 0.75em;
+    background: lighten($color: var.$sec_color, $amount: 5);
+    border-radius: 0.25em;
+  }
+
+  &.active {
+    > span {
+      svg {
+        rotate: 180deg;
+      }
+    }
+
+    .dropdown_child {
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.main {
+  position: relative;
+  color: var.$pri_text_color;
+  background: var.$sec_color;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 5em 2em;
+
+    @media (min-width: 1500px) {
+      min-height: 500px;
+    }
+  }
+
+  &_merchant {
+    width: 100%;
+
+    h1,
+    p {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(1.5em, 1.5em + 6vw, 5em);
+    }
+  }
+}
+
+.about {
+  padding: 6em 2em;
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    p {
+      max-width: 700px;
+      width: 100%;
+      font-size: 2em;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  &_button {
+    min-width: fit-content;
+  }
+}
+
+.workouts {
+  min-height: 500px;
+  padding: 5em 2em;
+  background: var.$sec_color;
+  color: var.$pri_text_color;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    width: 100%;
+
+    h2 {
+      font-size: 2.5em;
+      text-align: center;
+    }
+  }
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    place-content: center;
+
+    gap: 1em;
+    width: 100%;
+  }
+}

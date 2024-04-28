@@ -1,0 +1,35 @@
+.howmuch {
+  display: flex;
+  border: 1px solid #000;
+  width: fit-content;
+
+  button {
+    height: inherit;
+    border: none;
+    padding: 0.5em;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      display: block;
+    }
+  }
+
+  input {
+    max-width: 50px;
+    padding: 0.5em;
+    outline: none;
+    border: none;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &:has(input:focus) {
+    border-color: blue;
+  }
+}

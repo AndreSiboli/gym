@@ -1,0 +1,35 @@
+@use "@/styles/_dirs/variables" as var;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  // overflow-x: hidden;
+}
+
+body {
+  background-color: var.$pri_color;
+  color: var.$sec_text_color;
+
+  &::-webkit-scrollbar {
+    max-width: 7px;
+
+    &-thumb {
+      background: var.$sec_color;
+
+      &:hover {
+        background: lighten($color: var.$sec_color, $amount: 15);
+      }
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

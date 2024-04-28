@@ -1,0 +1,45 @@
+@use "@/styles/_dirs/variables" as var;
+
+.buy {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  position: sticky;
+  top: 7em;
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 250px;
+  width: 100%;
+  height: fit-content;
+  background: lighten($color: var.$sec_color, $amount: 5);
+  color: var.$pri_text_color;
+  border-radius: 0.5em;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    max-width: 300px;
+    top: auto;
+    bottom: 0;
+  }
+
+  &_price {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+
+    span:first-child {
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 1.25em;
+    }
+  }
+
+  &_button {
+    flex: 1 1 50%;
+  }
+}
