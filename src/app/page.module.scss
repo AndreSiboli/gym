@@ -37,6 +37,7 @@
 
 .about {
   padding: 6em 2em;
+
   &_container {
     display: flex;
     flex-direction: column;
@@ -50,6 +51,7 @@
       font-weight: 600;
       text-align: center;
       line-height: 1.45em;
+      // color: var.$accent-color;
     }
   }
 
@@ -74,6 +76,10 @@
     h2 {
       font-size: 2.5em;
       text-align: center;
+
+      span {
+        color: var.$accent-color-warm;
+      }
     }
   }
 

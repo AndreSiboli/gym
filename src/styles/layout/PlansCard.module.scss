@@ -36,7 +36,7 @@
       &:last-child {
         font-size: 1.5em;
         font-weight: 600;
-        color: var.$accent-color;
+        color: var.$accent-color-warm;
       }
     }
   }
@@ -71,13 +71,13 @@
 
         &.benefit {
           svg {
-            color: green;
+            color: #008000;
           }
         }
 
         &.no_benefit {
           svg {
-            color: red;
+            color: #ff0000;
           }
         }
       }
@@ -85,8 +85,11 @@
   }
 
   &_button {
+    button:hover {
+      border-color: var.$accent-color-warm;
+    }
     button::after {
-      background: var.$accent-color;
+      background: var.$accent-color-warm;
     }
   }
 }

@@ -55,14 +55,14 @@
 
   @include mix.OnlyPc {
     &:hover {
-      border-color: #ec5e76;
+      border-color: var.$accent-color-warm;
 
       > span {
-        color: #ec5e76;
+        color: var.$accent-color-warm;
       }
 
       .dot {
-        background: #ec5e76;
+        background: var.$accent-color-warm;
       }
     }
   }

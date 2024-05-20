@@ -68,7 +68,7 @@ export default function Home() {
       <section className={styles.workouts}>
         <Container>
           <div className={styles.workouts_container}>
-            <h2>Choose your workout!</h2>
+            <h2>Choose your <span>workout!</span></h2>
             <div className={styles.workouts_wrapper}>
               {datas.map((data) => (
                 <WorkoutCard data={data} key={data.title} />

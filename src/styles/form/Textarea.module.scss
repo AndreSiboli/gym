@@ -24,10 +24,10 @@
     }
 
     &:focus {
-      outline-color: var.$accent-color;
+      outline-color: lighten($color: var.$accent-color-warm, $amount: 5);
 
       ~ label {
-        color: var.$accent-color;
+        color: lighten($color: var.$accent-color-warm, $amount: 5);
       }
     }
   }

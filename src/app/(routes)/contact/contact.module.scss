@@ -1,3 +1,5 @@
+@use "@/styles/_dirs/variables" as var;
+
 .contact {
   padding: 2em;
   padding-top: 7em;
@@ -25,17 +27,18 @@
 
     h1 {
       text-align: center;
+      span {
+        color: var.$accent-color-warm;
+      }
     }
   }
-
-  
 
   &_break {
     span {
       display: flex;
       align-items: center;
       gap: 0.5em;
-      color: #888;
+      color: lighten($color: var.$sec_color, $amount: 50);
 
       &:before,
       &:after {
@@ -43,7 +46,7 @@
         display: block;
         width: 100%;
         height: 1px;
-        background-color: #888;
+        background-color: lighten($color: var.$sec_color, $amount: 50);
       }
     }
   }

@@ -15,21 +15,24 @@ export default function Schedule() {
           <div className={styles.schedule_how}>
             <div className={styles.schedule_step}>
               <h2>
-                <span>1</span>. Become a Membership
+                <span>1</span>. Become a{" "}
+                <span className={styles.impact}>Membership</span>
               </h2>
               <p>
-                Firtly, you&apos;ll have to become a membership. Go make it now!
+                Firstly, you&apos;ll have to become a membership. Go make it now!
               </p>
             </div>
             <div className={styles.schedule_step}>
               <h2>
-                <span>2</span>. Choose a plan
+                <span>2</span>. Choose a{" "}
+                <span className={styles.impact}>Plan</span>
               </h2>
               <p>Choose a plan that includes what you want. This way!</p>
             </div>
             <div className={styles.schedule_step}>
               <h2>
-                <span>3</span>. Make a schedule
+                <span>3</span>. Make a{" "}
+                <span className={styles.impact}>Schedule</span>
               </h2>
               <p>Now, you&apos;ll just need to make your schedule.</p>
             </div>
@@ -37,7 +40,7 @@ export default function Schedule() {
 
           <div className={styles.schedule_button}>
             <div className={styles.button_container}>
-              <LinkButton text="MAKE A SCHEDULE?" to="/schedule"/>
+              <LinkButton text="MAKE A SCHEDULE?" to="/schedule" />
             </div>
           </div>
         </div>

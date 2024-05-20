@@ -13,7 +13,7 @@ export default function Contact() {
       <Container>
         <div className={styles.contact_container}>
           <div className={styles.contact_info}>
-            <h1>Get in touch</h1>
+            <h1>Get in <span>touch</span></h1>
 
             <Form />
 

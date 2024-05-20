@@ -53,13 +53,13 @@
 
   @include mix.OnlyPc {
     &:hover {
-      border-color: var.$accent-color;
+      border-color: var.$accent-color-cold;
       > span {
-        color: var.$accent-color;
+        color: var.$accent-color-cold;
       }
 
       .dot {
-        background: var.$accent-color;
+        background: var.$accent-color-cold;
       }
     }
   }

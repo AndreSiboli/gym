@@ -34,8 +34,11 @@
 
     .schedule_step {
       h2 {
-        span {
+        span:not(.impact) {
           font-size: 1.5em;
+        }
+        .impact{
+          color: var.$accent-color-warm;
         }
       }
     }

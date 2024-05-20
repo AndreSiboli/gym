@@ -5,19 +5,9 @@ import Carousel from "@/app/components/carousel/Index";
 
 import { getFemaleClothes, getMaleClothes } from "@/utils/requests/shop";
 
-async function getProducts() {
-  const res = await getMaleClothes();
-  return res;
-}
-
-async function getProducts2() {
-  const res = await getFemaleClothes();
-  return res;
-}
-
 export default async function Shop() {
-  const maleData = await getProducts();
-  const femaleData = await getProducts2();
+  const maleData = await getMaleClothes();
+  const femaleData = await getFemaleClothes();
 
   return (
     <div className={styles.shop}>
@@ -27,13 +17,21 @@ export default async function Shop() {
             <div className={styles.shop_title}>
               <h1>Men&apos;s Clothing</h1>
             </div>
-            <Carousel datas={maleData} />
+            {maleData ? (
+              <Carousel datas={maleData} />
+            ) : (
+              <p className={styles.err}>An error has ocurred.</p>
+            )}
           </div>
           <div className={styles.shop_items}>
             <div className={styles.shop_title}>
               <h1>Women&apos;s Clothing</h1>
             </div>
-            <Carousel datas={femaleData} />
+            {femaleData ? (
+              <Carousel datas={femaleData} />
+            ) : (
+              <p className={styles.err}>An error has ocurred.</p>
+            )}
           </div>
         </div>
       </Container>

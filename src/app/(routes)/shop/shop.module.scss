@@ -1,6 +1,7 @@
 .shop {
   padding: 2em;
   padding-top: 7em;
+  min-height: 100vh;
 
   &_container {
     display: flex;
@@ -27,6 +28,10 @@
           background: #000;
         }
       }
+    }
+
+    .err {
+      text-align: center;
     }
 
     .items_wrapper {

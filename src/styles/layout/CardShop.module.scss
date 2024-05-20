@@ -2,12 +2,8 @@
 @use "@/styles/_dirs/mixins" as mix;
 
 .card {
-  // width: 100%;
-  // height: 100%;
   background: var.$lightest_color;
   border-radius: 1em;
-  // height: fit-content;
-
 
   &_wrapper {
     display: flex;
@@ -58,7 +54,7 @@
     .infos_price {
       span {
         font-weight: bold;
-        color: #ec5e76;
+        color: var.$accent-color-warm;
       }
     }
   }
