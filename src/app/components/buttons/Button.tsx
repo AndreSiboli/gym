@@ -20,7 +20,7 @@ export default function Button(props: PropsTypes) {
     <button
       className={`${Radio.className} ${styles.button}`}
       style={style}
-      onClick={handleClick}
+      onClick={()=> handleClick()}
     >
       <span>{text}</span>
     </button>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@types/node": "20.11.28",
@@ -23,6 +24,12 @@
     "typescript": "5.4.2"
   },
   "devDependencies": {
-    "sass": "^1.72.0"
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.6",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "sass": "^1.72.0",
+    "ts-node": "^10.9.2"
   }
 }

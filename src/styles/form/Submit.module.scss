@@ -10,12 +10,10 @@
   transition: 0.25s ease-in-out;
   position: relative;
   width: 100%;
-  min-height: 3.5em;
+  min-height: 50px;
 
   > span {
-    z-index: 5;
     transition: 0.15s ease-in-out;
-    position: relative;
   }
 
   .dot_container {
@@ -55,14 +53,13 @@
 
   @include mix.OnlyPc {
     &:hover {
-      border-color: #ec5e76;
-
+      border-color: var.$accent-color;
       > span {
-        color: #ec5e76;
+        color: var.$accent-color;
       }
 
       .dot {
-        background: #ec5e76;
+        background: var.$accent-color;
       }
     }
   }

@@ -25,7 +25,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const res = getDBItems();
-    if(!res) return
     setItems(res);
   }, []);
 
@@ -57,8 +56,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   function increaseItem(data: { id: number; howMany: number }) {
-    const { id, howMany } = data;
-    const res = increaseDBItem({ id, howMany });
+    const res = increaseDBItem(data);
     setItems([...res]);
   }
 

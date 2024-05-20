@@ -1,10 +1,11 @@
 import { CartProductsType, ProductsType } from "@/@types/products";
 
 function getAndConvert() {
-  const items = localStorage.getItem("cart");
   const arr: CartProductsType[] = [];
 
   try {
+    const items = localStorage.getItem("cart");
+
     if (items) {
       const convert2Object = JSON.parse(items);
       arr.push(...convert2Object);
@@ -17,32 +18,42 @@ function getAndConvert() {
 }
 
 export function addDBItem(item: ProductsType) {
-  const sto = localStorage;
-  const items = sto.getItem("cart");
+  const storage = localStorage;
+  const items = storage.getItem("cart");
   const arr: ProductsType[] = [];
 
   try {
     if (items) {
-      const convert2Object = JSON.parse(items);
-      arr.push(...convert2Object);
-    }
+      const converted2Object = JSON.parse(items);
+      arr.push(...converted2Object);
+    } else throw new Error("An error has occured.");
   } catch (error) {
-    throw new Error("An error has occured.");
+    const err = error as Error;
+    console.error(err.message);
   } finally {
     if (arr.filter((it) => it.id === item.id).length > 0) return;
 
     arr.push(item);
     const convert2JSON = JSON.stringify(arr);
-    sto.setItem("cart", convert2JSON);
+    storage.setItem("cart", convert2JSON);
   }
 }
 
 export function getDBItems() {
-  const get = localStorage.getItem("cart");
+  try {
+    const get = localStorage.getItem("cart");
+    if (!get) return [] as unknown as CartProductsType[];
 
-  if (!Array.isArray(get)) return;
-  const conversion = JSON.parse(get);
-  return conversion;
+    const converted = JSON.parse(get);
+    if (Array.isArray(converted)) {
+      return converted as unknown as CartProductsType[];
+    }
+    throw new Error("An error has ocurred");
+  } catch (error) {
+    const err = error as Error;
+    console.error(err.message);
+    return [] as unknown as CartProductsType[];
+  }
 }
 
 export function increaseDBItem(data: { id: number; howMany: number }) {

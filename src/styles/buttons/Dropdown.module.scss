@@ -18,7 +18,7 @@
   &_child {
     height: 0;
     overflow: hidden;
-    transition: 0.15s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 
   &_navigation {
@@ -28,6 +28,14 @@
     padding: 1em 0.75em;
     background: lighten($color: var.$sec_color, $amount: 5);
     border-radius: 0.25em;
+
+    a {
+      transition: 0.25s ease-in-out;
+
+      &:hover {
+        transform: translate3d(5px, 0, 0);
+      }
+    }
   }
 
   &.active {
