@@ -5,6 +5,7 @@ import styles from "@/styles/Navbar/Menu.module.scss";
 import Link from "next/link";
 
 import { FaXTwitter, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa6";
+import { RiTiktokLine } from "react-icons/ri";
 import Dropdown from "../buttons/Dropdown";
 import LinkButton from "../links/LinkButton";
 

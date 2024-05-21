@@ -4,19 +4,19 @@
 .link {
   display: inline-block;
   padding: 0.75em 1em;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   cursor: pointer;
   font-weight: bold;
   border: 1px solid #000;
-  transition: 0.25s ease-in-out;
+  transition: border-color 0.25s ease-in-out;
   position: relative;
   width: 100%;
   background: var.$pri_color;
   text-align: center;
 
   > span {
-    z-index: 5;
-    transition: 0.15s ease-in-out;
+    z-index: 2;
+    transition: color 0.15s ease-in-out;
     position: relative;
     font-size: 0.85em;
   }
@@ -30,7 +30,7 @@
     top: 0;
     left: 0;
     border-radius: 0.2em;
-    transition: 0.25s ease-in-out;
+    transition: width 0.25s ease-in-out;
   }
 
   @include mix.OnlyPc {
@@ -43,7 +43,6 @@
 
       &:after {
         width: 100%;
-        z-index: 1;
       }
     }
   }

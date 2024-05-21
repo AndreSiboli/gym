@@ -2,17 +2,31 @@
 @use "@/styles/_dirs/mixins" as mix;
 
 .header {
-  background: var.$sec_color;
+  background: var.$lightest_color;
   width: 100%;
   padding: 1.25em 2em;
   position: fixed;
   z-index: 99;
-  transition: background 0.25s ease-in-out, box-shadow 0.15s ease-in-out;
-  box-shadow: 0 1px 5px #0002;
+  transition: background 0.25s ease-in-out, border-bottom 0.15s ease-in-out;
 
   &.ontop.base {
     background: transparent;
-    box-shadow: none;
+  }
+
+  &:not(.ontop),
+  &:not(.base) {
+    border-bottom: 1px solid lighten($color: var.$sec_text_color, $amount: 75);
+
+    h1,
+    .header_cart svg {
+      color: var.$sec_text_color;
+    }
+
+    .header_hamburger {
+      .trace {
+        background: var.$sec_text_color;
+      }
+    }
   }
 
   &_container {
@@ -29,8 +43,8 @@
   }
 
   &_hamburger {
-    width: 30px;
-    height: 25px;
+    width: 32px;
+    height: 24px;
     position: relative;
     cursor: pointer;
     z-index: 99;
@@ -50,7 +64,7 @@
       }
 
       &:nth-child(2) {
-        top: calc((25px / 2) - (3px / 2));
+        top: calc((24px / 2) - (3px / 2));
         left: 0;
         width: 80%;
       }
@@ -69,9 +83,11 @@
 
     &.active {
       .trace {
+        background: var.$pri_text-color !important;
+
         &:first-child,
         &:last-child {
-          top: calc(25px / 2 - 3px / 2);
+          top: calc(24px / 2 - 3px / 2);
           width: 100%;
         }
 
@@ -111,10 +127,15 @@
   &_cart {
     color: var.$pri_text-color;
     font-size: 1.5em;
-    z-index: 99;
 
     svg {
       display: block;
+    }
+  }
+
+  &.active {
+    h1 {
+      color: var.$pri_text_color;
     }
   }
 }

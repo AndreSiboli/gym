@@ -70,7 +70,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${styles.header} ${isOnTop && styles.ontop} ${
+      className={`${styles.header} ${isOnTop && styles.ontop} ${isMenuActive && styles.active} ${
         isBase && styles.base
       }`}
     >
