@@ -17,12 +17,13 @@
         position: relative;
         width: fit-content;
         margin: 0 auto;
+        font-weight: 500;
 
         &::after {
           content: "";
           position: absolute;
           width: 100%;
-          height: 5px;
+          height: 3px;
           left: 0;
           bottom: -5px;
           background: #000;
@@ -40,6 +41,7 @@
       flex-wrap: wrap;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      box-shadow: 0 0 5px #0005;
     }
   }
 }

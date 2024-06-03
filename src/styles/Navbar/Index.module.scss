@@ -2,29 +2,28 @@
 @use "@/styles/_dirs/mixins" as mix;
 
 .header {
-  background: var.$lightest_color;
   width: 100%;
-  padding: 1.25em 2em;
+  padding: 1em 2em;
   position: fixed;
   z-index: 99;
-  transition: background 0.25s ease-in-out, border-bottom 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out, border-bottom 0.15s ease-in-out;
 
-  &.ontop.base {
-    background: transparent;
+  &:not(.ontop.base) {
+    background: var.$lightest_color;
   }
 
   &:not(.ontop),
   &:not(.base) {
-    border-bottom: 1px solid lighten($color: var.$sec_text_color, $amount: 75);
+    border-bottom: 1px solid lighten($color: var.$dark_text_color, $amount: 75);
 
     h1,
     .header_cart svg {
-      color: var.$sec_text_color;
+      color: var.$dark_text_color;
     }
 
     .header_hamburger {
       .trace {
-        background: var.$sec_text_color;
+        background: var.$dark_text_color;
       }
     }
   }
@@ -83,7 +82,7 @@
 
     &.active {
       .trace {
-        background: var.$pri_text-color !important;
+        background: var.$light_text_color !important;
 
         &:first-child,
         &:last-child {
@@ -125,7 +124,7 @@
   }
 
   &_cart {
-    color: var.$pri_text-color;
+    color: var.$light_text_color;
     font-size: 1.5em;
 
     svg {
@@ -135,7 +134,7 @@
 
   &.active {
     h1 {
-      color: var.$pri_text_color;
+      color: var.$light_text_color;
     }
   }
 }

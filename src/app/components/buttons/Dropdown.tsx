@@ -1,8 +1,9 @@
 "use client";
 
-import styles from "@/styles/buttons/Dropdown.module.scss";
-import Link from "next/link";
 import { useState } from "react";
+import styles from "@/styles/buttons/Dropdown.module.scss";
+
+import Link from "next/link";
 
 import { FaAngleDown } from "react-icons/fa6";
 

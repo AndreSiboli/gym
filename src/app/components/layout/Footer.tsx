@@ -18,22 +18,22 @@ export default function Footer() {
     {
       logo: <FaXTwitter />,
       to: "https://www.x.com",
-      alt: "Link to X(Twitter)",
+      alt: "X(Twitter)",
     },
     {
       logo: <FaTiktok />,
       to: "https://www.tiktok.com",
-      alt: "Link to Tik Tok",
+      alt: "Tik Tok",
     },
     {
       logo: <FaInstagram />,
       to: "https://www.instagram.com",
-      alt: "Link to Instagram",
+      alt: "Instagram",
     },
     {
       logo: <FaYoutube />,
       to: "https://www.youtube.com",
-      alt: "Link to Youtube",
+      alt: "Youtube",
     },
   ];
 
@@ -104,7 +104,7 @@ export default function Footer() {
               </div>
               <div className={styles.footer_metions}>
                 <div className={styles.footer_metions_title}>
-                  <span>Metions</span>
+                  <span>Mentions</span>
                 </div>
                 <nav className={styles.footer_metions_links}>
                   {metions.map((mention) => (
@@ -117,10 +117,10 @@ export default function Footer() {
             </div>
 
             <div className={styles.footer_links}>
-              <Link href="">Terms and Conditions</Link>
-              <Link href="">Privacy Policy</Link>
-              <Link href="">Work With Us</Link>
-              <Link href="">Contact Us</Link>
+              <Link href="/">Terms and Conditions</Link>
+              <Link href="/">Privacy Policy</Link>
+              <Link href="/">Work With Us</Link>
+              <Link href="/">Contact Us</Link>
             </div>
           </div>
 

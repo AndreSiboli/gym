@@ -35,7 +35,7 @@
         font-size: 1.2em;
       }
 
-      &:disabled{
+      &:disabled {
         cursor: no-drop;
       }
 
@@ -56,9 +56,11 @@
     > div {
       display: inline-block;
       width: calc(100% / 4 - 1em);
+      box-shadow: 0 0 5px #0005;
+      margin: 5px 0;
 
-      &:first-child{
-        margin-left: .5em;
+      &:first-child {
+        margin-left: 0.5em;
       }
 
       &:not(:last-child) {

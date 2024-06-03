@@ -14,7 +14,7 @@ body {
 
 body {
   background-color: var.$pri_color;
-  color: var.$sec_text_color;
+  color: var.$dark_text_color;
 
   &::-webkit-scrollbar {
     max-width: 7px;

@@ -18,28 +18,28 @@ export default function Home() {
       slogan: "Strengthening Body, Mind, and Spirit.",
       src: yoga,
       link: "/workouts/yoga",
-      alt: 'Link to yoga page'
+      alt: 'Yoga page'
     },
     {
       title: "Body",
       slogan: "Sculpting Strength, Shaping Stamina.",
       src: body,
       link: "/workouts/bodybuilding",
-      alt: 'Link to bodybuiding page'
+      alt: 'Bodybuiding page'
     },
     {
       title: "Sports",
       slogan: "Elevate Your Limits, Embrace the Challenge.",
       src: sports,
       link: "/workouts/sports",
-      alt: 'Link to sport page'
+      alt: 'Sport page'
     },
     {
       title: "Ballet",
       slogan: "Dance with Resilience, Shine with Grace.",
       src: ballet,
       link: "/workouts/ballet",
-      alt: 'Link to ballet page'
+      alt: 'Ballet page'
     },
   ];
 

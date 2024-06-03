@@ -23,7 +23,7 @@
 
   &::after {
     content: "";
-    background: var.$accent-color-warm;
+    background: var.$brand_color;
     width: 0;
     height: 100%;
     position: absolute;
@@ -35,10 +35,10 @@
 
   @include mix.OnlyPc {
     &:hover {
-      border-color: var.$accent-color-warm;
+      border-color: var.$brand_color;
 
       > span {
-        color: var.$pri_text-color;
+        color: var.$light_text_color;
       }
 
       &:after {

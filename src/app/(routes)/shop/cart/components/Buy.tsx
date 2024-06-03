@@ -1,9 +1,10 @@
 "use client";
 
-import Button from "@/app/components/buttons/Button";
 import styles from "./Buy.module.scss";
 import { useContext } from "react";
 import { CartContext } from "@/@context/Cart";
+
+import Button from "@/app/components/buttons/Button";
 
 export default function Buy() {
   const { total } = useContext(CartContext);
@@ -17,7 +18,7 @@ export default function Buy() {
   }
 
   return (
-    <div className={styles.buy}>
+    <aside className={styles.buy}>
       <div className={styles.buy_price}>
         <span>Sub-total:</span>
         <span>${decimal(total)}</span>
@@ -25,6 +26,6 @@ export default function Buy() {
       <div className={styles.buy_button}>
         <Button text="BUY" handleClick={submit} />
       </div>
-    </div>
+    </aside>
   );
 }

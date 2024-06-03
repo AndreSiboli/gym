@@ -1,12 +1,14 @@
+@use "@/styles/_dirs/variables" as var;
+
 .card {
   display: flex;
   justify-content: space-between;
   gap: 2em;
   flex-wrap: wrap;
-  background: #fff;
+  background: var.$pri_color;
   padding: 2em;
   border-radius: 0.5em;
-  box-shadow: 2px 2px 2px #0005;
+  box-shadow: 0px 0px 5px #0005;
 
   &_wrapper {
     flex: 1 1 65%;
@@ -30,7 +32,7 @@
       svg {
         display: block;
         font-size: 1.2em;
-        color: rgb(200, 50, 50);
+        color: var.$support_color_err;
       }
     }
   }

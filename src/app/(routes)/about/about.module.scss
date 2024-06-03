@@ -61,18 +61,8 @@
 
     h1 {
       font-size: clamp(1.5em, 1.5em + 2vw, 4em);
-      position: relative;
-      margin-left: 20px;
-
-      &:after {
-        content: "";
-        height: 100%;
-        width: 0.25em;
-        position: absolute;
-        top: 0;
-        left: -20px;
-        background: var.$sec_color;
-      }
+      font-weight: 500;
+      line-height: 1em;
     }
 
     p {

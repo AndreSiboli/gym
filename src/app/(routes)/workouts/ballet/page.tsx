@@ -9,6 +9,7 @@ import ballet3 from "@/assets/gym/ballet/pexels-cottonbro-studio-10640450.jpg";
 import WorkoutImages from "@/app/components/layout/WorkoutImage";
 import Container from "@/app/components/layout/Container";
 import Schedule from "@/app/components/layout/workouts/Schedule";
+import Phrase from "@/app/components/layout/workouts/Phrase";
 
 export default function Ballet() {
   const datas = [
@@ -42,18 +43,12 @@ export default function Ballet() {
         stylesImg={{ objectPosition: "50% 0%" }}
       />
 
-      <section className={styles.about}>
-        <Container>
-          <div className={styles.about_container}>
-            <p>
-              From the Whisper of Pointe Shoes to the Soaring Heights of Grand
+      <Phrase
+        text="From the Whisper of Pointe Shoes to the Soaring Heights of Grand
               Jetés, Ballet Transcends Time, Captivating Hearts and Minds Alike.
               Experience the Magic, Feel the Passion, and Let Ballet Transport
-              You to a World of Dreams.
-            </p>
-          </div>
-        </Container>
-      </section>
+              You to a World of Dreams."
+      />
 
       <WorkoutImages datas={datas} />
       <Schedule />

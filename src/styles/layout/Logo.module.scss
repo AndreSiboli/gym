@@ -2,7 +2,8 @@
 
 .logo {
   h1 {
-    color: var.$pri_text_color;
+    color: var.$light_text_color;
     font-size: calc(1.25em + 0.75vw);
+    font-weight: 400;
   }
 }

@@ -2,7 +2,7 @@ import styles from "./location.module.scss";
 
 import Container from "@/app/components/layout/Container";
 
-import { FaClock, FaMapPin, FaPhone } from "react-icons/fa6";
+import { FiPhone, FiClock, FiMapPin } from "react-icons/fi";
 
 export default function Location() {
   const locations = [
@@ -52,13 +52,13 @@ export default function Location() {
                 <p>{location.text}</p>
                 <div className={styles.location_info}>
                   <span>
-                    <FaMapPin /> {location.local}
+                    <FiMapPin /> {location.local}
                   </span>
                   <span>
-                    <FaPhone /> {location.phone}
+                    <FiPhone /> {location.phone}
                   </span>
                   <span>
-                    <FaClock /> {location.time}
+                    <FiClock /> {location.time}
                   </span>
                 </div>
               </div>

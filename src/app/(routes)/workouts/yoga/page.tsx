@@ -10,6 +10,7 @@ import yoga1 from "@/assets/gym/yoga/pexels-elina-fairytale-3822719.jpg";
 import yoga2 from "@/assets/gym/yoga/pexels-elina-fairytale-3823184.jpg";
 import yoga3 from "@/assets/gym/yoga/pexels-elina-fairytale-3822727.jpg";
 import Schedule from "@/app/components/layout/workouts/Schedule";
+import Phrase from "@/app/components/layout/workouts/Phrase";
 
 export default function Yoga() {
   const datas = [
@@ -43,17 +44,11 @@ export default function Yoga() {
         stylesImg={{ objectPosition: "50% 80%" }}
       />
 
-      <section className={styles.about}>
-        <Container>
-          <div className={styles.about_container}>
-            <p>
-              Embrace Each Posture as a Journey, Each Breath as a Guide, and
-              Each Moment as an Opportunity to Connect Deeper with Yourself and
-              the World Around You.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <Phrase
+        text="Embrace Each Posture as a Journey, Each Breath as a Guide, and Each
+            Moment as an Opportunity to Connect Deeper with Yourself and the
+            World Around You."
+      />
 
       <WorkoutImages datas={datas} />
 

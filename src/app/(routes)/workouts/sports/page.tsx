@@ -10,6 +10,7 @@ import Schedule from "@/app/components/layout/workouts/Schedule";
 import sports1 from "@/assets/gym/sports/pexels-cottonbro-studio-4761795.jpg";
 import sports2 from "@/assets/gym/sports/pexels-edward-eyer-13947313.jpg";
 import sports3 from "@/assets/gym/sports/pexels-chiara-caldarola-1257245.jpg";
+import Phrase from "@/app/components/layout/workouts/Phrase";
 
 export default function Sports() {
   const datas = [
@@ -33,7 +34,7 @@ export default function Sports() {
       reverse: true,
     },
   ];
-  
+
   return (
     <>
       <Wallpaper
@@ -43,18 +44,12 @@ export default function Sports() {
         stylesImg={{ objectPosition: "50% 50%" }}
       />
 
-      <section className={styles.about}>
-        <Container>
-          <div className={styles.about_container}>
-            <p>
-              It&apos;s More Than Just Physical Activity; It&apos;s a Universal Language
-              That Unites Cultures and Transcends Boundaries. It&apos;s Where Dreams
+      <Phrase
+        text=" It's More Than Just Physical Activity; It's a Universal Language
+              That Unites Cultures and Transcends Boundaries. It's Where Dreams
               Take Flight, Legends Are Born, and the Essence of Excellence
-              Endures.
-            </p>
-          </div>
-        </Container>
-      </section>
+              Endures."
+      />
 
       <WorkoutImages datas={datas} />
       <Schedule />

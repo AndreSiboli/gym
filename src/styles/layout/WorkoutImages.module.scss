@@ -1,7 +1,7 @@
 @use "@/styles/_dirs/variables" as var;
 
 .description {
-  color: var.$pri_text_color;
+  color: var.$light_text_color;
   background: var.$sec_color;
 
   &_container {

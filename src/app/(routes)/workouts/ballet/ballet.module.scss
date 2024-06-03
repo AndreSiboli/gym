@@ -1,26 +1,10 @@
+@use "@/styles/_dirs/variables" as var;
+
 .ballet {
   //This work togheter WorkoutImage component
   @media (max-width: 600px) {
     img {
       object-position: 50% 50% !important;
-    }
-  }
-
-  .about {
-    padding: 6em 2em;
-
-    &_container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    p {
-      max-width: 700px;
-      width: 100%;
-      font-size: 2em;
-      font-weight: 600;
-      text-align: center;
     }
   }
 }

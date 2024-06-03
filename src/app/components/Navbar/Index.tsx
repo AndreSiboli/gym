@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "@/styles/Navbar/Index.module.scss";
 
+import Link from "next/link";
 import Container from "@/app/components/layout/Container";
 import Menu from "@/app/components/Navbar/Menu";
 import Logo from "@/app/components/layout/Logo";
-import Link from "next/link";
-
-import { FaCartShopping } from "react-icons/fa6";
-import { usePathname } from "next/navigation";
 import LinkButton from "../links/LinkButton";
+
+import { HiOutlineShoppingCart } from "react-icons/hi2";
 
 export default function Navbar() {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -70,9 +70,9 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${styles.header} ${isOnTop && styles.ontop} ${isMenuActive && styles.active} ${
-        isBase && styles.base
-      }`}
+      className={`${styles.header} ${isOnTop && styles.ontop} ${
+        isMenuActive && styles.active
+      } ${isBase && styles.base}`}
     >
       <Container>
         <div className={styles.header_container}>
@@ -95,11 +95,15 @@ export default function Navbar() {
           <div className={styles.header_end}>
             <div className={styles.header_cart}>
               <Link href="/shop/cart" aria-label="Cart">
-                <FaCartShopping />
+                <HiOutlineShoppingCart />
               </Link>
             </div>
             <div className={styles.header_button}>
-              <LinkButton text="SCHEDULE" to="/schedule" />
+              <LinkButton
+                text="SCHEDULE"
+                to="/schedule"
+                style={{ fontSize: ".95em" }}
+              />
             </div>
           </div>
         </div>

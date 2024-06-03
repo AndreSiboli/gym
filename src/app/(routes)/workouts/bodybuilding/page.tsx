@@ -10,6 +10,7 @@ import Container from "@/app/components/layout/Container";
 import body1 from "@/assets/gym/bodybuilding/pexels-marcus-chan-17898141.jpg";
 import body2 from "@/assets/gym/bodybuilding/pexels-morpheus-11319087.jpg";
 import body3 from "@/assets/gym/bodybuilding/pexels-tima-miroshnichenko-6389075.jpg";
+import Phrase from "@/app/components/layout/workouts/Phrase";
 
 export default function BodyBuilding() {
   const datas = [
@@ -43,18 +44,11 @@ export default function BodyBuilding() {
         stylesImg={{ objectPosition: "50% 50%" }}
       />
 
-      <section className={styles.about}>
-        <Container>
-          <div className={styles.about_container}>
-            <p>
-              Beyond the Gym, Bodybuilding Becomes a Lifestyle of Discipline,
-              Focus, and Self-Discovery, Fostering Resilience and Unveiling
-              Potential. It&apos;s Not Just About Building Muscles; It&apos;s About
-              Building Character, Confidence, and a Legacy of Endurance.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <Phrase
+        text="Beyond the Gym, Bodybuilding Becomes a Lifestyle of Discipline,
+              Focus, and Self-Discovery. It's Not Just About Building Muscles; It's About
+              Building Character, Confidence, and a Legacy of Endurance."
+      />
 
       <WorkoutImages datas={datas} />
       <Schedule />

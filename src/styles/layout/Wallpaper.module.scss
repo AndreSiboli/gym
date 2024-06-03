@@ -2,7 +2,7 @@
 
 .main {
   position: relative;
-  color: var.$pri_text_color;
+  color: var.$light_text_color;
   background: var.$sec_color;
 
   &_wallpaper {
@@ -37,6 +37,8 @@
 
     h1 {
       font-size: clamp(1.5em, 1.5em + 6vw, 5em);
+      font-weight: 500;
+      line-height: 1.4em;
     }
   }
 }

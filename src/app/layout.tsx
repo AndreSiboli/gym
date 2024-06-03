@@ -1,12 +1,15 @@
 import "./globals.scss";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 import Navbar from "@/app/components/Navbar/Index";
 import Footer from "@/app/components/layout/Footer";
 import { CartProvider } from "@/@context/Cart";
 import { MessageProvider } from "@/@context/Message";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: "Endurance",
@@ -21,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <MessageProvider>
           <CartProvider>
             <Navbar />

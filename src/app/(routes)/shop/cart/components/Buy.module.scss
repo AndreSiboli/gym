@@ -11,9 +11,10 @@
   max-width: 250px;
   width: 100%;
   height: fit-content;
-  background: lighten($color: var.$sec_color, $amount: 5);
-  color: var.$pri_text_color;
+  background: var.$pri_color;
+
   border-radius: 0.5em;
+  box-shadow: 0 0 5px 1px #0005;
 
   @media (max-width: 768px) {
     flex-direction: row;
@@ -28,14 +29,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
-
-    span:first-child {
-      font-weight: bold;
-    }
+    gap: 0.25em;
 
     span {
       font-size: 1.25em;
+
+      &:first-child {
+        font-weight: bold;
+        color: var.$brand_color;
+      }
     }
   }
 
