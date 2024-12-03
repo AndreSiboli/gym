@@ -1,0 +1,9 @@
+@use "@/styles/_dirs/variables" as var;
+
+.logo {
+  h1 {
+    color: var.$light_text_color;
+    font-size: calc(1.25em + 0.75vw);
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,124 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  justify-content: space-between;
+  gap: 1em;
+  border-radius: 0.5em;
+  padding: 1.5em;
+  box-shadow: 0 0 5px #0002;
+  transition: scale 0.1s ease-in-out, border 0.1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: #0001;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .retangle {
+    position: absolute;
+    width: 120%;
+    height: 180px;
+    background: var.$brand_color_300;
+    background-color: #000;
+    top: 0;
+    left: -20px;
+    z-index: -1;
+    transform: rotate(-15deg) translate(0, -35px);
+    transition: 0.15s ease-in-out;
+  }
+
+  @include mix.OnlyPc {
+    &:hover {
+      scale: 1.05;
+      border-color: var.$brand_color_900;
+
+      .retangle {
+        transform: rotate(0deg) translate(0, -40px);
+      }
+    }
+  }
+
+  .card_title {
+    h2 {
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  &_price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+
+    span {
+      &:first-child {
+        font-size: 0.85em;
+        color: #fff;
+      }
+
+      &:last-child {
+        font-size: 2em;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+  }
+
+  &_benefits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    padding-top: 2em;
+
+    > span {
+      font-size: 1.1em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25em;
+
+      p {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+
+        svg {
+          display: block;
+        }
+
+        &.benefit {
+          svg {
+            color: #008000;
+          }
+        }
+
+        &.no_benefit {
+          svg {
+            color: #ff0000;
+          }
+        }
+      }
+    }
+  }
+
+  &_button {
+    button {
+      color: #fff !important;
+      border: none !important;
+    }
+  }
+}

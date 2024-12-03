@@ -1,0 +1,57 @@
+@use "@/styles/_dirs/variables" as var;
+
+.schedule {
+  padding: 7em 2em;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  &_title {
+    h1 {
+      position: relative;
+      padding-left: 0.75em;
+
+      &:before {
+        content: "";
+        background: var.$neutral_color_100;
+        width: 5px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &_how {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 0 2em;
+
+    .schedule_step {
+      h2 {
+        span:not(.impact) {
+          font-size: 1.5em;
+        }
+        .impact {
+          color: var.$brand_color_500;
+        }
+      }
+    }
+  }
+
+  &_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+
+    .button_container {
+      max-width: 200px;
+      width: 100%;
+    }
+  }
+}

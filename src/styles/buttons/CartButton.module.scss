@@ -1,0 +1,70 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  padding: 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid var.$neutral_color_900;
+  transition: 0.25s ease-in-out;
+  position: relative;
+  width: 100%;
+  min-height: 3.5em;
+  background: var.$neutral_color_100;
+
+  > span {
+    z-index: 5;
+    transition: 0.15s ease-in-out;
+    position: relative;
+  }
+
+  .dot_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    height: 100%;
+
+    .dot {
+      width: 0.55em;
+      height: 0.55em;
+      border-radius: 50%;
+      background: #000;
+      animation: 0.5s ease-in-out infinite alternate dotting;
+      opacity: 0;
+      transform: scale(0);
+
+      &:first-child {
+        animation-delay: 0.16s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.32s;
+      }
+      &:last-child {
+        animation-delay: 0.48s;
+      }
+    }
+
+    @keyframes dotting {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  @include mix.OnlyPc {
+    &:hover {
+      border-color: var.$brand_color_500;
+
+      > span {
+        color: var.$brand_color_500;
+      }
+
+      .dot {
+        background: var.$brand_color_500;
+      }
+    }
+  }
+}

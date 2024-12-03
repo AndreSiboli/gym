@@ -1,0 +1,68 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.card {
+  background: var.$lightest_color;
+  border-radius: 1em;
+  box-shadow: 0 0 5px #0003;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 2em;
+    padding-bottom: 1em;
+    transition: filter 0.25s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.05);
+    }
+  }
+
+  &_img {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+
+    @include mix.OnlyPc {
+      img {
+        transition: 0.25s ease-in-out;
+        &:hover {
+          scale: 0.95;
+        }
+      }
+    }
+  }
+
+  &_infos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .infos_title {
+      h2 {
+        overflow: hidden;
+        font-size: 1.1em;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        word-break: break-word;
+        text-wrap: nowrap;
+      }
+    }
+
+    .infos_price {
+      span {
+        font-weight: bold;
+        color: var.$brand_color_500;
+      }
+    }
+  }
+
+  &_button {
+    display: block;
+    padding: 1.5em 2em;
+    padding-top: 0;
+  }
+}

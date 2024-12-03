@@ -1,0 +1,61 @@
+@use "@/styles/_dirs/variables" as var;
+
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #0005;
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 400px;
+    width: fit-content;
+    position: relative;
+    background: var.$pri_color;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+  }
+
+  &_text{
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+  }
+
+  &_button {
+    display: flex;
+    gap: 0.5em;
+
+    button {
+      padding: 0.5em;
+      max-width: 100px;
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1em;
+      border: 1px solid #000;
+      border-radius: 0.25em;
+      transition: background 0.1s ease-in-out;
+
+      &.agree {
+        &:hover {
+          background: #5ed35e;
+        }
+      }
+      &.disagree {
+        &:hover {
+          background: #f57d7d;
+        }
+      }
+    }
+  }
+}

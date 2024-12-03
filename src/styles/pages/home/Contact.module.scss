@@ -1,0 +1,158 @@
+@use "@/styles/_dirs/variables" as var;
+
+.contact {
+  padding: 8em 2em;
+  overflow: hidden;
+
+  @media (max-width: 850px) {
+    padding-top: 350px;
+    padding-bottom: 5em;
+  }
+
+  &_container {
+    display: flex;
+    border-radius: 0.5em;
+
+    @media (max-width: 850px) {
+      flex-direction: column-reverse;
+      background: var.$neutral_color_100;
+      box-shadow: 0 0 5px #0003;
+    }
+  }
+
+  &_info {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding: 2em 4em;
+    width: 100%;
+    border-radius: 0.5em;
+    background: var.$neutral_color_100;
+
+    @media (min-width: 850px) {
+      box-shadow: 0 0 5px #0003;
+    }
+
+    @media (max-width: 850px) {
+      max-width: none;
+      border-radius: 0.5em;
+      padding-right: 2em;
+      padding-left: 2em;
+    }
+
+    .info_title {
+      h1 {
+        text-align: center;
+        color: #000;
+      }
+    }
+  }
+
+  &_overflow {
+    flex: 1 1 50%;
+    position: relative;
+
+    @media (max-width: 850px) {
+      flex: 0 0 auto;
+      width: 100%;
+      height: 375px;
+    }
+  }
+
+  &_image {
+    position: absolute;
+    width: 650px;
+    aspect-ratio: 1/1;
+    transform: translate(0, -60px);
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      aspect-ratio: 1/1;
+      top: 50%;
+      left: 50%;
+      border-radius: 0.5em;
+      transform: translate(-50%, -50%);
+    }
+
+    &:before {
+      width: 50%;
+      background: var.$brand_color_500;
+      transform-origin: left top;
+      box-shadow: 5px 5px 7px #0003;
+      transition: transform 1s ease-in-out;
+      animation: 4s alternate-reverse infinite moveBG;
+
+      background: linear-gradient(
+        45deg,
+        var.$brand_color_300,
+        var.$brand_color_400,
+        var.$brand_color_900
+      );
+      background-size: 400%;
+
+      @keyframes moveBG {
+        from {
+          background-position: 0 0;
+        }
+
+        to {
+          background-position: 100% 50%;
+          // scale: 1.05;
+        }
+      }
+    }
+
+    &:after {
+      width: 60%;
+      border: 3px dotted var.$brand_color_900;
+      z-index: -1;
+      animation: 4s ease-in-out alternate-reverse infinite opacityChange;
+      transform-origin: left top;
+
+      @keyframes opacityChange {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0.2;
+        }
+      }
+    }
+
+    // &:hover {
+    //   &::before {
+    //     animation-play-state: running;
+    //   }
+    // }
+
+    @media (max-width: 990px) {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      aspect-ratio: auto;
+      transform: translate(0, 0);
+    }
+
+    @media (max-width: 850px) {
+      width: 650px;
+      left: 50%;
+      height: auto;
+      aspect-ratio: 1/1;
+      position: absolute;
+      transform: translate(-50%, -300px);
+
+      &:after,
+      &:before {
+        content: none;
+      }
+
+      img {
+        object-position: center center !important;
+      }
+    }
+  }
+}

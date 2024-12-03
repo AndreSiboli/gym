@@ -1,0 +1,10 @@
+@use "@/styles/_dirs/variables" as var;
+
+.ballet {
+  //This work togheter WorkoutImage component
+  @media (max-width: 600px) {
+    img {
+      object-position: 50% 50% !important;
+    }
+  }
+}

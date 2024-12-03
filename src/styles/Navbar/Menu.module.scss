@@ -1,0 +1,102 @@
+@use "@/styles/_dirs/variables" as var;
+
+.menu {
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  color: #fff;
+  z-index: 90;
+
+  &_bar {
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: var.$sec_color;
+    transition: 0.25s ease-in-out;
+    overflow: hidden;
+    box-shadow: 1px 0 5px #0007;
+    padding-top: 6em;
+  }
+
+  &_wrapper {
+    overflow: hidden auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3em;
+    padding: 5em;
+    padding-bottom: 3em;
+    padding-top: 0;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      max-width: 7px;
+
+      &-thumb {
+        background: var.$pri-color;
+      }
+    }
+  }
+
+  &_navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .navigation_button {
+      display: none;
+
+      @media (max-width: 450px) {
+        display: block;
+      }
+    }
+
+    a {
+      font-size: 1.5em;
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  &_social {
+    display: flex;
+    gap: 1em;
+    justify-content: space-evenly;
+
+    a {
+      svg {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  &_copy {
+    display: flex;
+    justify-content: center;
+
+    p {
+      text-wrap: nowrap;
+      font-size: 0.9em;
+      color: #ddd;
+    }
+  }
+
+  &.active {
+    visibility: visible;
+
+    .menu_bar {
+      width: 450px;
+
+      @media (max-width: 450px) {
+        width: 100%;
+      }
+    }
+  }
+}

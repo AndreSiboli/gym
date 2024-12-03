@@ -1,0 +1,105 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  padding: 1em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid var.$neutral_color_100;
+  transition: 0.25s ease-in-out;
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  background: transparent;
+  color: #fff;
+
+  > span {
+    transition: 0.15s ease-in-out;
+  }
+
+  .dot_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    height: 100%;
+
+    .dot {
+      width: 0.55em;
+      height: 0.55em;
+      border-radius: 50%;
+
+      animation: 0.5s ease-in-out infinite alternate dotting;
+      opacity: 0;
+      transform: scale(0);
+
+      &:first-child {
+        animation-delay: 0.16s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.32s;
+      }
+      &:last-child {
+        animation-delay: 0.48s;
+      }
+    }
+
+    @keyframes dotting {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &.v1 {
+    color: #000;
+    border-color: var.$neutral_color_900;
+
+    .dot_container {
+      .dot {
+        background: var.$neutral_color_900;
+      }
+    }
+
+    @include mix.OnlyPc {
+      &:hover {
+        background: var.$neutral_color_900;
+
+        > span {
+          color: #fff;
+        }
+
+        .dot_container .dot {
+          background: var.$neutral_color_100;
+        }
+      }
+    }
+  }
+
+  &.v2 {
+    color: #fff;
+    border-color: var.$neutral_color_100;
+
+    .dot_container {
+      .dot {
+        background: var.$neutral_color_100;
+      }
+    }
+
+    @include mix.OnlyPc {
+      &:hover {
+        background: var.$neutral_color_100;
+
+        > span {
+          color: #000;
+        }
+
+        .dot {
+          background: var.$neutral_color_900;
+        }
+      }
+    }
+  }
+}

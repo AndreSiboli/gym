@@ -1,0 +1,57 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.link {
+  display: block;
+  padding: 0.75em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+
+  &.v1 {
+    border: 1px solid var.$neutral_color_100;
+    color: #fff;
+    transition: border-color 0.25s ease-in-out;
+  }
+
+  &.v2 {
+    background: var.$neutral_color_100;
+    border: 1px solid var.$neutral_color_900;
+  }
+
+  > span {
+    z-index: 2;
+    transition: color 0.15s ease-in-out;
+    position: relative;
+    font-size: 0.85em;
+  }
+
+  &::after {
+    content: "";
+    background: var.$brand_color_500;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.25s ease-in-out;
+  }
+
+  @include mix.OnlyPc {
+    &:hover {
+      border-color: var.$brand_color_500;
+
+      > span {
+        color: var.$light_text_color;
+      }
+
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
