@@ -1,20 +1,22 @@
 import "./globals.scss";
-import { Poppins } from "next/font/google";
-
-import Navbar from "@/app/components/Navbar/Index";
-import Footer from "@/app/components/layout/Footer";
+import { Rubik } from "next/font/google";
+import { Metadata } from "next";
 import { CartProvider } from "@/@context/Cart";
 import { MessageProvider } from "@/@context/Message";
 
-const poppins = Poppins({
+import Navbar from "@/app/components/Navbar/Index";
+import Footer from "@/app/components/layout/Footer";
+
+const poppins = Rubik({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Endurance",
-  description: "Endurance",
-  author: "André Siboli",
+  description: "This is a fictional site about a gym.",
+  keywords: "gym, workout, dumbell",
+  authors: [{ name: "André Siboli" }],
 };
 
 export default function RootLayout({

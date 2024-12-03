@@ -27,33 +27,41 @@ export default function PlansCard(props: PropsType) {
     alert("If it were a real site, this action would work.");
   }
 
+  function isBenefit() {
+    return benefits.map((benefit) => (
+      <p
+        className={`${benefit.isBenefit ? styles.benefit : styles.no_benefit}`}
+        key={benefit.text}
+      >
+        <span>{benefit.isBenefit ? <GoVerified /> : <MdOutlineCancel />}</span>
+        {benefit.text}
+      </p>
+    ));
+  }
+
   return (
-    <div className={styles.card} style={{ borderColor: `${colorPlan}` }}>
-      <h2>{name}</h2>
-      <div className={styles.card_price}>
-        <span>Price Per Month</span>
-        <span>${price}</span>
-      </div>
-      <div className={styles.card_benefits}>
-        <span>Benefits</span>
-        <div className={styles.card_benefits_list}>
-          {benefits.map((benefit) => (
-            <p
-              className={`${
-                benefit.isBenefit ? styles.benefit : styles.no_benefit
-              }`}
-              key={benefit.text}
-            >
-              <span>
-                {benefit.isBenefit ? <GoVerified /> : <MdOutlineCancel />}
-              </span>
-              {benefit.text}
-            </p>
-          ))}
+    <div className={styles.card}>
+      <div className={styles.retangle} style={{ background: colorPlan }} />
+      <div className={styles.card_wrapper}>
+        <div className={styles.card_title}>
+          <h2>{name}</h2>
+        </div>
+        <div className={styles.card_price}>
+          <span>Price Per Month</span>
+          <span>${price}</span>
+        </div>
+        <div className={styles.card_benefits}>
+          <span>Benefits</span>
+          <div className={styles.card_benefits_list}>{isBenefit()}</div>
         </div>
       </div>
+
       <div className={styles.card_button}>
-        <Button text="JOIN US" handleClick={click} />
+        <Button
+          text="JOIN US"
+          handleClick={click}
+          style={{ background: colorPlan }}
+        />
       </div>
     </div>
   );

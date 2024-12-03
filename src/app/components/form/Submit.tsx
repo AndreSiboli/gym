@@ -2,41 +2,35 @@
 
 import { Radio_Canada } from "next/font/google";
 import styles from "@/styles/form/Submit.module.scss";
-import { CSSProperties, ChangeEvent, MouseEvent, useState } from "react";
+import {
+  ButtonHTMLAttributes,
+  CSSProperties,
+  ChangeEvent,
+  ComponentProps,
+  MouseEvent,
+  useState,
+} from "react";
 
 const Radio = Radio_Canada({
   weight: ["500", "600", "700"],
   subsets: ["latin-ext"],
 });
 
-interface PropsTypes {
+interface PropsTypes extends ComponentProps<"button"> {
   text: string;
   style?: CSSProperties;
-  handleClick: (e: MouseEvent<HTMLButtonElement>) => void;
+  loading: boolean;
+  variant: 'v1' | 'v2'
 }
 
 export default function Submit(props: PropsTypes) {
-  const { text, style = {}, handleClick } = props;
-  const [loading, setLoading] = useState(false);
-
-  function submit(e: MouseEvent<HTMLButtonElement>) {
-    handleClick(e);
-  }
-
-  function delaySubmit(e: MouseEvent<HTMLButtonElement>) {
-    e.preventDefault()
-    setLoading(true);
-    setTimeout(() => {
-      submit(e);
-      setLoading(false);
-    }, 1000);
-  }
+  const { text, style = {}, loading, variant } = props;
 
   return (
     <button
-      className={`${Radio.className} ${styles.button}`}
+      {...props}
+      className={`${Radio.className} ${styles.button} ${styles[variant]}`}
       style={style}
-      onClick={(e) => delaySubmit(e)}
     >
       {!loading ? (
         <span>{text}</span>

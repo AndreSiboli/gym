@@ -1,15 +1,15 @@
 import styles from "./ballet.module.scss";
 
-import img from "@/assets/gym/ballet/pexels-budgeron-bach-5154374.jpg";
 import Wallpaper from "@/app/components/layout/Wallpaper";
+import WorkoutImages from "@/app/components/layout/WorkoutImage";
+import Phrase from "@/app/components/layout/workouts/Phrase";
+import Schedule from "@/app/components/layout/workouts/Schedule";
 
+import img from "@/assets/gym/ballet/pexels-budgeron-bach-5154374.jpg";
 import ballet1 from "@/assets/gym/ballet/pexels-anastasia-shuraeva-8935911.jpg";
 import ballet2 from "@/assets/gym/ballet/pexels-cottonbro-studio-4324017.jpg";
 import ballet3 from "@/assets/gym/ballet/pexels-cottonbro-studio-10640450.jpg";
-import WorkoutImages from "@/app/components/layout/WorkoutImage";
-import Container from "@/app/components/layout/Container";
-import Schedule from "@/app/components/layout/workouts/Schedule";
-import Phrase from "@/app/components/layout/workouts/Phrase";
+import image from "@/assets/gym/ballet/ballet-dancing.png";
 
 export default function Ballet() {
   const datas = [
@@ -48,6 +48,7 @@ export default function Ballet() {
               Jetés, Ballet Transcends Time, Captivating Hearts and Minds Alike.
               Experience the Magic, Feel the Passion, and Let Ballet Transport
               You to a World of Dreams."
+        src={image}
       />
 
       <WorkoutImages datas={datas} />

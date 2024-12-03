@@ -6,11 +6,12 @@
   border-radius: 0.25em;
   cursor: pointer;
   font-weight: bold;
-  border: 1px solid #000;
+  border: 1px solid var.$neutral_color_900;
   transition: 0.25s ease-in-out;
   position: relative;
   width: 100%;
   min-height: 3.5em;
+  background: var.$neutral_color_100;
 
   > span {
     z-index: 5;
@@ -55,14 +56,14 @@
 
   @include mix.OnlyPc {
     &:hover {
-      border-color: var.$brand_color;
+      border-color: var.$brand_color_500;
 
       > span {
-        color: var.$brand_color;
+        color: var.$brand_color_500;
       }
 
       .dot {
-        background: var.$brand_color;
+        background: var.$brand_color_500;
       }
     }
   }

@@ -2,26 +2,19 @@ import { CSSProperties } from "react";
 import Image, { StaticImageData } from "next/image";
 
 interface PropsType {
-  src: string | StaticImageData | null;
+  src: string | StaticImageData;
   alt?: string;
-  style?: CSSProperties | null;
+  style?: CSSProperties;
 }
 
 export default function Img(props: PropsType) {
-  const { src = "", alt = "", style } = props;
-
-  function defineFit() {
-    if (!style) return { objectFit: "cover" } as CSSProperties;
-    else if (!style?.objectFit)
-      return { ...style, objectFit: "cover" } as CSSProperties;
-    return style;
-  }
+  const { src = "", alt = "", style = {} } = props;
 
   return (
     <Image
       src={src ? src : ""}
       alt={alt}
-      style={defineFit()}
+      style={{ objectFit: "cover", ...style }}
       fill
       sizes="100vw"
     />

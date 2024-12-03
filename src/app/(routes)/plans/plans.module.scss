@@ -1,3 +1,6 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
 .plans {
   min-height: 100dvh;
   padding: 2em;
@@ -16,6 +19,10 @@
     align-items: center;
     gap: 1em;
 
+    h1 {
+      color: var.$brand_color_500;
+    }
+
     p {
       text-align: center;
     }
@@ -23,7 +30,7 @@
 
   &_wrapper {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 275px));
+    grid-template-columns: repeat(4, minmax(200px, 275px));
     place-content: center;
     gap: 1em;
 

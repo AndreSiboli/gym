@@ -38,6 +38,7 @@ export default function Navbar() {
       "/workouts/ballet",
       "/workouts/bodybuilding",
       "/workouts/sports",
+      "/shop",
     ];
 
     const checkup = bases.filter((base) => base === router);
@@ -76,9 +77,9 @@ export default function Navbar() {
     >
       <Container>
         <div className={styles.header_container}>
-          <div className={styles.header_wrapper}>
+          <div className={styles.header_start}>
             <div
-              className={`${styles.header_hamburger} ${
+              className={`${styles.start_hamburger} ${
                 isMenuActive && styles.active
               }`}
               onClick={openClose}
@@ -87,21 +88,22 @@ export default function Navbar() {
               <div className={styles.trace}></div>
               <div className={styles.trace}></div>
             </div>
-            <div className={styles.header_logo}>
+            <div className={styles.start_logo}>
               <Logo />
             </div>
           </div>
 
           <div className={styles.header_end}>
-            <div className={styles.header_cart}>
+            <div className={styles.end_cart}>
               <Link href="/shop/cart" aria-label="Cart">
                 <HiOutlineShoppingCart />
               </Link>
             </div>
-            <div className={styles.header_button}>
+            <div className={styles.end_button}>
               <LinkButton
                 text="SCHEDULE"
-                to="/schedule"
+                href="/schedule"
+                variant={isOnTop && isBase ? "v1" : "v2"}
                 style={{ fontSize: ".95em" }}
               />
             </div>

@@ -8,10 +8,12 @@
   input {
     width: 100%;
     height: 100%;
-    padding: 1em;
+    padding: 0.5em;
     font-size: 1em;
-    border: 1px solid #000;
+    border: none;
+    border-bottom: 1px solid var.$neutral_color_900;
     background: transparent;
+    color: var.$neutral_color_900;
 
     &:focus,
     &:not(:placeholder-shown) {
@@ -19,16 +21,15 @@
         translate: 0 -26px;
         font-size: 0.9em;
         font-weight: bold;
-        padding: 0 0.5em;
-        background: #fff;
+        // padding: 0 0.5em;
       }
     }
 
     &:focus {
-      outline-color: lighten($color: var.$brand_color, $amount: 5);
+      outline: none;
 
       ~ label {
-        color: lighten($color: var.$brand_color, $amount: 5);
+        color: lighten($color: var.$neutral_color_900, $amount: 5);
       }
     }
   }
@@ -37,9 +38,8 @@
     display: block;
     position: absolute;
     pointer-events: none;
-
+    color: var.$neutral_color_900;
     top: calc(50% - 10px);
-    left: 12px;
     transition: 0.1s ease-in-out;
   }
 }

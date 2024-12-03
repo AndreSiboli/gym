@@ -1,16 +1,15 @@
 import styles from "./yoga.module.scss";
 
-import Container from "@/app/components/layout/Container";
 import Wallpaper from "@/app/components/layout/Wallpaper";
-import Button from "@/app/components/buttons/Button";
 import WorkoutImages from "@/app/components/layout/WorkoutImage";
+import Schedule from "@/app/components/layout/workouts/Schedule";
+import Phrase from "@/app/components/layout/workouts/Phrase";
 
-import img from "@/assets/gym/yoga/pexels-elina-fairytale-3823076.jpg";
+import img from "@/assets/gym/yoga/woman-stratching-isolated.jpg";
 import yoga1 from "@/assets/gym/yoga/pexels-elina-fairytale-3822719.jpg";
 import yoga2 from "@/assets/gym/yoga/pexels-elina-fairytale-3823184.jpg";
 import yoga3 from "@/assets/gym/yoga/pexels-elina-fairytale-3822727.jpg";
-import Schedule from "@/app/components/layout/workouts/Schedule";
-import Phrase from "@/app/components/layout/workouts/Phrase";
+import image from "@/assets/gym/yoga/yoga-exercising.png";
 
 export default function Yoga() {
   const datas = [
@@ -45,13 +44,11 @@ export default function Yoga() {
       />
 
       <Phrase
-        text="Embrace Each Posture as a Journey, Each Breath as a Guide, and Each
-            Moment as an Opportunity to Connect Deeper with Yourself and the
-            World Around You."
+        text="Our gym offers a variety of workouts to suit every fitness level, from high-intensity training to peaceful yoga sessions. Join our yoga classes to improve flexibility, reduce stress, and rejuvenate your mind and body. With certified instructors and a welcoming environment, we&apos;re here to help you achieve balance and strength."
+        src={image}
       />
 
       <WorkoutImages datas={datas} />
-
       <Schedule />
     </>
   );

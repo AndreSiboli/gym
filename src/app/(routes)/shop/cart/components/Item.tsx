@@ -50,6 +50,7 @@ export default function Item({ data }: { data: CartProductsType }) {
           <span>${decimal(data.price)}</span>
         </div>
       </div>
+      
       <div className={styles.card_end}>
         <button onClick={toggleDialog} aria-label="Button to delete item">
           <FaTrash />

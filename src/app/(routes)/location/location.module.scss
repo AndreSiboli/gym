@@ -1,7 +1,7 @@
 @use "@/styles/_dirs/variables" as var;
 
 .location {
-  padding: 2em 1em;
+  padding: 5em 1em;
   padding-top: 7em;
 
   &_container {
@@ -13,10 +13,10 @@
   &_local {
     display: flex;
     gap: 3em;
-    background: var.$lightest_color;
+    background: var.$neutral_color_100;
     padding: 2em;
     border-radius: 0.5em;
-    box-shadow: 0 0 3px 1px #0005;
+    box-shadow: 0 0 5px 5px #0003;
 
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -44,6 +44,11 @@
       border: none;
       box-shadow: 0 0 2px #0005;
     }
+
+    p{
+      font-size: .8em;
+      color: var.$neutral_color_700;
+    }
   }
 
   &_text {
@@ -55,6 +60,7 @@
 
     h1{
       font-weight: 500;
+      color: var.$brand_color_500
     }
 
     p {

@@ -2,7 +2,7 @@
 @use "@/styles/_dirs/mixins" as mix;
 
 .footer {
-  background: var.$sec_color;
+  background: var.$neutral_color_900;
   width: 100%;
   min-height: 300px;
   padding: 5em 2em 2em 2em;
@@ -95,7 +95,7 @@
     &_links {
       display: flex;
       flex-direction: column;
-      gap: 0.25em;
+      gap: 0.5em;
 
       span {
         display: flex;

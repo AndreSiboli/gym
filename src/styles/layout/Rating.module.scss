@@ -1,0 +1,19 @@
+.card_rate {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+
+  .star {
+    width: 15px;
+    height: 15px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  > p {
+    width: 0.9em;
+  }
+}

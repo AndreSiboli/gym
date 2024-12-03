@@ -1,7 +1,7 @@
 @use "@/styles/_dirs/variables" as var;
 
 .schedule {
-  padding: 5em 2em;
+  padding: 7em 2em;
 
   &_container {
     display: flex;
@@ -16,7 +16,7 @@
 
       &:before {
         content: "";
-        background: var.$sec_color;
+        background: var.$neutral_color_100;
         width: 5px;
         height: 100%;
         position: absolute;
@@ -38,7 +38,7 @@
           font-size: 1.5em;
         }
         .impact {
-          color: var.$brand_color;
+          color: var.$brand_color_500;
         }
       }
     }

@@ -2,17 +2,26 @@
 @use "@/styles/_dirs/mixins" as mix;
 
 .link {
-  display: inline-block;
+  display: block;
   padding: 0.75em 1em;
   border-radius: 0.5em;
   cursor: pointer;
   font-weight: bold;
-  border: 1px solid #000;
-  transition: border-color 0.25s ease-in-out;
   position: relative;
   width: 100%;
-  background: var.$pri_color;
   text-align: center;
+  overflow: hidden;
+
+  &.v1 {
+    border: 1px solid var.$neutral_color_100;
+    color: #fff;
+    transition: border-color 0.25s ease-in-out;
+  }
+
+  &.v2 {
+    background: var.$neutral_color_100;
+    border: 1px solid var.$neutral_color_900;
+  }
 
   > span {
     z-index: 2;
@@ -23,19 +32,18 @@
 
   &::after {
     content: "";
-    background: var.$brand_color;
+    background: var.$brand_color_500;
     width: 0;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 0.2em;
     transition: width 0.25s ease-in-out;
   }
 
   @include mix.OnlyPc {
     &:hover {
-      border-color: var.$brand_color;
+      border-color: var.$brand_color_500;
 
       > span {
         color: var.$light_text_color;

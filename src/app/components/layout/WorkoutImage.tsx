@@ -21,7 +21,7 @@ export default function WorkoutImages(props: PropsTypes) {
         {datas.map((data) => (
           <div className={styles.description_card} key={data.id}>
             <div className={styles.description_image}>
-              <Img src={data.src} style={data.styleImg ? data.styleImg : {}} />
+              <Img src={data.src} style={data.styleImg} />
             </div>
           </div>
         ))}

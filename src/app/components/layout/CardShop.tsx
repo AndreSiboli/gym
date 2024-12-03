@@ -4,7 +4,7 @@ import { CartProductsType } from "@/@types/products";
 import Link from "next/link";
 import Img from "@/app/components/utils/Img";
 import CartButton from "@/app/components/buttons/CartButton";
-import Stars from "@/app/components/layout/Stars";
+import Rating from "@/app/components/layout/Rating";
 
 interface PropsType {
   data: CartProductsType;
@@ -31,7 +31,7 @@ export default function CardShop(props: PropsType) {
             <span>${decimal(price)}</span>
           </div>
         </div>
-        <Stars rate={rating.rate} count={rating.count} />
+        <Rating rating={{ score: rating.rate, votes: rating.count }} />
       </Link>
 
       <div className={styles.card_button}>

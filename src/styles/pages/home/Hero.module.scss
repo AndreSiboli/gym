@@ -1,0 +1,31 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.hero {
+  position: relative;
+  color: #fff;
+  background: var.$neutral_color_800;
+
+  a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    padding: 0.75em;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    &:hover {
+      svg {
+        transform: translate(0, 3px);
+      }
+    }
+
+    svg {
+      display: block;
+      color: #fff;
+      font-size: 1.25em;
+      transition: 0.35s ease-in-out;
+    }
+  }
+}

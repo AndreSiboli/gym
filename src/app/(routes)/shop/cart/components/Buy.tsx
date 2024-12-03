@@ -7,7 +7,7 @@ import { CartContext } from "@/@context/Cart";
 import Button from "@/app/components/buttons/Button";
 
 export default function Buy() {
-  const { total } = useContext(CartContext);
+  const { total, items } = useContext(CartContext);
 
   function decimal(num: number) {
     return num.toFixed(2);
@@ -19,13 +19,41 @@ export default function Buy() {
 
   return (
     <aside className={styles.buy}>
-      <div className={styles.buy_price}>
-        <span>Sub-total:</span>
-        <span>${decimal(total)}</span>
+      <header>
+        <h1>Summary</h1>
+      </header>
+
+      <div className={styles.buy_body}>
+        <div className={styles.body_row}>
+          <span>Sub-total:</span>
+          <span>${decimal(total)}</span>
+        </div>
+        <div className={styles.body_row}>
+          <span>Total items:</span>
+          <span>{items.reduce((prev, curr) => prev + curr.howMany, 0)}</span>
+        </div>
+        <div className={styles.body_row}>
+          <span>Discount:</span>
+          <span>$0</span>
+        </div>
       </div>
-      <div className={styles.buy_button}>
-        <Button text="BUY" handleClick={submit} />
-      </div>
+
+      <footer className={styles.buy_footer}>
+        <div className={styles.footer_total}>
+          <div className={styles.total_row}>
+            <span>Total:</span>
+            <span>${decimal(total)}</span>
+          </div>
+        </div>
+
+        <div className={styles.footer_button}>
+          <Button
+            text="BUY"
+            handleClick={submit}
+            style={{ background: "#000", color: "#fff" }}
+          />
+        </div>
+      </footer>
     </aside>
   );
 }

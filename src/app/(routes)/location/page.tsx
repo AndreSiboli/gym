@@ -45,6 +45,7 @@ export default function Location() {
                   allowFullScreen={false}
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+                <p>The location is fictional.</p>
               </div>
 
               <div className={styles.location_text}>

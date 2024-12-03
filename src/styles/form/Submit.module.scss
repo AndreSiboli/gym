@@ -6,11 +6,13 @@
   border-radius: 0.25em;
   cursor: pointer;
   font-weight: bold;
-  border: 1px solid #000;
+  border: 1px solid var.$neutral_color_100;
   transition: 0.25s ease-in-out;
   position: relative;
   width: 100%;
   min-height: 50px;
+  background: transparent;
+  color: #fff;
 
   > span {
     transition: 0.15s ease-in-out;
@@ -27,7 +29,7 @@
       width: 0.55em;
       height: 0.55em;
       border-radius: 50%;
-      background: #000;
+
       animation: 0.5s ease-in-out infinite alternate dotting;
       opacity: 0;
       transform: scale(0);
@@ -51,15 +53,52 @@
     }
   }
 
-  @include mix.OnlyPc {
-    &:hover {
-      border-color: var.$accent-color-cold;
-      > span {
-        color: var.$accent-color-cold;
-      }
+  &.v1 {
+    color: #000;
+    border-color: var.$neutral_color_900;
 
+    .dot_container {
       .dot {
-        background: var.$accent-color-cold;
+        background: var.$neutral_color_900;
+      }
+    }
+
+    @include mix.OnlyPc {
+      &:hover {
+        background: var.$neutral_color_900;
+
+        > span {
+          color: #fff;
+        }
+
+        .dot_container .dot {
+          background: var.$neutral_color_100;
+        }
+      }
+    }
+  }
+
+  &.v2 {
+    color: #fff;
+    border-color: var.$neutral_color_100;
+
+    .dot_container {
+      .dot {
+        background: var.$neutral_color_100;
+      }
+    }
+
+    @include mix.OnlyPc {
+      &:hover {
+        background: var.$neutral_color_100;
+
+        > span {
+          color: #000;
+        }
+
+        .dot {
+          background: var.$neutral_color_900;
+        }
       }
     }
   }

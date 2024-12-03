@@ -31,7 +31,7 @@ export default function Plans() {
     {
       name: "Elegance",
       price: "49.50",
-      colorPlan: "#894261",
+      colorPlan: "#452677",
       benefits: [
         {
           isBenefit: true,
@@ -85,7 +85,7 @@ export default function Plans() {
     {
       name: "Combat",
       price: "79.90",
-      colorPlan: "#DE4846",
+      colorPlan: "#133BE1",
       benefits: [
         {
           isBenefit: true,
@@ -95,41 +95,6 @@ export default function Plans() {
         {
           isBenefit: true,
           text: "Shower",
-        },
-      ],
-    },
-    {
-      name: "Immersive",
-      price: "79.90",
-      colorPlan: "#2C34E0",
-      benefits: [
-        {
-          isBenefit: true,
-          text: "Swimmig Classes",
-        },
-        { isBenefit: true, text: "Swimming Trainer" },
-        {
-          isBenefit: false,
-          text: "Classes on Sunday",
-        },
-      ],
-    },
-    {
-      name: "Rigorous",
-      price: "99.90",
-      colorPlan: "#00320C",
-      benefits: [
-        {
-          isBenefit: true,
-          text: "Running Classes",
-        },
-        {
-          isBenefit: true,
-          text: "Bodybuilding Classes",
-        },
-        {
-          isBenefit: true,
-          text: "Includes all bodybuilding benefits.",
         },
       ],
     },

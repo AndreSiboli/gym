@@ -19,7 +19,8 @@ export default function Schedule() {
                 <span className={styles.impact}>Membership</span>
               </h2>
               <p>
-                Firstly, you&apos;ll have to become a membership. Go make it now!
+                Firstly, you&apos;ll have to become a membership. Go make it
+                now!
               </p>
             </div>
             <div className={styles.schedule_step}>
@@ -40,7 +41,7 @@ export default function Schedule() {
 
           <div className={styles.schedule_button}>
             <div className={styles.button_container}>
-              <LinkButton text="MAKE A SCHEDULE?" to="/schedule" />
+              <LinkButton text="MAKE A SCHEDULE?" href="/schedule" variant="v2"/>
             </div>
           </div>
         </div>

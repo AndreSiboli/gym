@@ -17,27 +17,27 @@ export default function Footer() {
   const social = [
     {
       logo: <FaXTwitter />,
-      to: "https://www.x.com",
+      href: "https://www.x.com",
       alt: "X(Twitter)",
     },
     {
       logo: <FaTiktok />,
-      to: "https://www.tiktok.com",
+      href: "https://www.tiktok.com",
       alt: "Tik Tok",
     },
     {
       logo: <FaInstagram />,
-      to: "https://www.instagram.com",
+      href: "https://www.instagram.com",
       alt: "Instagram",
     },
     {
       logo: <FaYoutube />,
-      to: "https://www.youtube.com",
+      href: "https://www.youtube.com",
       alt: "Youtube",
     },
   ];
 
-  const metions = [
+  const mentions = [
     { link: "https://www.pexels.com/pt-br/@cottonbro/", mention: "Cottonbro" },
     {
       link: "https://www.pexels.com/pt-br/@elly-fairytale/",
@@ -79,7 +79,12 @@ export default function Footer() {
           <div className={styles.footer_top}>
             <nav className={styles.footer_social}>
               {social.map((item) => (
-                <Link href={item.to} target="_blank" aria-label={item.alt} key={item.to}>
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  aria-label={item.alt}
+                  key={item.href}
+                >
                   {item.logo}
                 </Link>
               ))}
@@ -107,7 +112,7 @@ export default function Footer() {
                   <span>Mentions</span>
                 </div>
                 <nav className={styles.footer_metions_links}>
-                  {metions.map((mention) => (
+                  {mentions.map((mention) => (
                     <Link href={mention.link} key={mention.mention}>
                       {mention.mention}
                     </Link>
@@ -120,7 +125,7 @@ export default function Footer() {
               <Link href="/">Terms and Conditions</Link>
               <Link href="/">Privacy Policy</Link>
               <Link href="/">Work With Us</Link>
-              <Link href="/">Contact Us</Link>
+              <Link href="#contact">Contact Us</Link>
             </div>
           </div>
 
